@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	install -d debian/radian-jetson-stream-forward/usr/bin
+
+	install -m 0755 \
+		files/raw-stream-forward.sh \
+		debian/radian-jetson-stream-forward/usr/bin/raw-stream-forward.sh
+
+	install -d debian/radian-jetson-stream-forward/lib/systemd/system
+
+	install -m 0644 \
+		files/jetson-raw-forward.service \
+		debian/radian-jetson-stream-forward/lib/systemd/system/jetson-raw-forward.service
+
+	install -m 0644 \
+		files/jetson-raw-forward.path \
+		debian/radian-jetson-stream-forward/lib/systemd/system/jetson-raw-forward.path
+
+	install -m 0644 \
+		files/jetson-ai-forward.service \
+		debian/radian-jetson-stream-forward/lib/systemd/system/jetson-ai-forward.service

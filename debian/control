@@ -1,0 +1,18 @@
+Source: radian-jetson-stream-forward
+Section: net
+Priority: optional
+Maintainer: Radian Tech <support@radian-tech.com>
+Build-Depends:
+ debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Rules-Requires-Root: no
+
+Package: radian-jetson-stream-forward
+Architecture: arm64
+Depends:
+ ${misc:Depends},
+ ffmpeg,
+ python3
+Description: Radian Jetson RAW and AI RTSP stream forwarding
+ Systemd services for forwarding CCTV RAW and Jetson AI RTSP streams
+ to AWS MediaMTX.

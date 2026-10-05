@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installsystemd/13.6ubuntu1
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	deb-systemd-invoke stop 'jetson-ai-forward.service' 'jetson-raw-forward.path' 'jetson-raw-forward.service' >/dev/null || true
+fi
+# End automatically added section
